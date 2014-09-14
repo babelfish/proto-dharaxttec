@@ -1,0 +1,249 @@
+\RequirePackage[l2tabu, orthodox]{nag}
+
+\documentclass[11pt,a4paper,titlepage]{article}
+\makeatletter
+\def\@seccntformat#1{\llap{\csname the#1\endcsname\quad}}
+\makeatother
+
+\usepackage{mdframed}
+\usepackage[table]{xcolor}
+\usepackage{graphicx}
+\usepackage[top=0.75in, bottom=0.75in, left=1in, right=0.75in]{geometry}
+\usepackage{arcs}
+\usepackage{covington}
+\usepackage{dvgloss}
+\usepackage{microtype}
+\usepackage{tipa}
+\let\ipa\textipa
+\usepackage{vowel}
+\usepackage{multicol}
+\usepackage{needspace}
+\usepackage{pdfpages}
+\usepackage[colorlinks=true, linkcolor=black, urlcolor=cyan, pdfborder={0 0 0}]{hyperref}
+\usepackage{fontspec}
+\usepackage{gb4e}
+\usepackage{setspace}
+\usepackage{multirow}
+\usepackage{changepage}
+\usepackage{lipsum}
+\usepackage{parskip}
+\usepackage{changepage}
+\DeclareUTFcharacter[\UTFencname]{x2329}{\textlangle}
+\DeclareUTFcharacter[\UTFencname]{x232A}{\textrangle}
+\DeclareUTFcharacter[\UTFencname]{x0335}{\strokeoverlay}
+\newcommand\phoneme[1]{/\,#1\,/}
+\newcommand\phone[1]{[\,#1\,]}
+\newcommand\orth[1]{\textlangle\,#1\,\textrangle}
+\newcommand\gstop{ʔ}
+\newcommand\textlong{ː}
+\newcommand{\BlankCell}{}
+\newcommand\tl{ɬ}
+\renewcommand\epsilon{ɛ}
+\onehalfspace
+
+% \newmdenv[
+%   
+% ]{example-box}
+%
+% \renewenvironment{example}
+% {\vspace{\baselineskip}\begin{adjustwidth}{1em}{0pt}\begin{example-box}}
+% {\end{example-box}\end{adjustwidth}}
+%
+% \newenvironment{original}
+% {\itshape}
+% {\upshape}
+%
+% \newenvironment{translation}
+% {``}
+% {''}
+
+\author{Benjamin Smith}
+\title{Proto-Dharáxtec Grammar}
+\date{September 14, 2014}
+\setmainfont{Charis SIL}
+
+\begin{document}
+	% \includepdf[pages={1}]{cover.pdf}
+
+	\tableofcontents
+
+	\newpage
+
+	\section{Introduction}
+
+	\section{Legend}
+		\begin{tabular}{l l l l l l}
+			1 & 1\textsuperscript{st} person & \textsc{exh} & exhortative & \textsc{obv} & obviative \\
+			2 & 2\textsuperscript{nd} person & \textsc{gen} & genitive & \textsc{opt} & optative \\
+			3 & 3\textsuperscript{rd} person & \textsc{gno} & gnomic & \textsc{per} & perlative \\
+			\textsc{abl} & ablative & \textsc{hab} & habitual & \textsc{pfv} & perfective \\
+			\textsc{ade} & adessive & \textsc{ill} & illative & \textsc{pl} & plural \\
+			\textsc{all} & allative & \textsc{imp} & imperative & \textsc{prs} & present \\
+			\textsc{ass} & assumptive & \textsc{inch} & inchoative & \textsc{rec} & reciprocal \\
+			\textsc{att} & attenuative & \textsc{incl} & inclusive & \textsc{refl} & reflexive \\
+			\textsc{bene} & benefactive & \textsc{ine} & inessive & \textsc{rel} & relativizer \\
+			\textsc{c} & complementizer & \textsc{infr} & inferential & \textsc{rfut} & remote future \\
+			\textsc{caus} & causative & \textsc{inh} & inhortative & \textsc{rpst} & remote past \\
+			\textsc{cess} & cessative & \textsc{inst} & instrumental & \textsc{subj} & subjunctive \\
+			\textsc{com} & comitative & \textsc{int} & intensive & \textsc{sub} & subessive \\
+			\textsc{cond} & conditional & \textsc{ipfv]} & imperfective & \textsc{sup} & superessive \\
+			\textsc{ded} & deductive & \textsc{nec} & necessitative & \textsc{svl} & semi-volitional \\
+			\textsc{du} & dual & \textsc{neg} & negative & \textsc{voc} & vocative \\
+			\textsc{dub} & dubitative & \textsc{nfut} & near future & \textsc{vol} & volitional \\
+			\textsc{ela} & elative & \textsc{npst} & near past & & \\
+			\textsc{excl} & exclusive & \textsc{nvl} & non-volitional & & \\
+		\end{tabular}
+
+	\section{Phonology}
+
+		\subsection{Phoneme Inventory}
+
+			\subsubsection{Consonants}
+        \begin{tabular}{|l|cc|cc|cc|cc|cc|cc|}
+
+          \hline
+          \multicolumn{1}{|r}{Place} & \multicolumn{2}{|c}{Labial} & \multicolumn{4}{|c}{Coronal} & \multicolumn{4}{|c}{Dorsal} & \multicolumn{2}{|c|}{Glottal} \\
+
+          \hline
+          Manner & \multicolumn{2}{c}{Bilabial} & \multicolumn{2}{|c}{Dental} & \multicolumn{2}{|c}{Retroflex} & \multicolumn{2}{|c}{Palatal} & \multicolumn{2}{|c}{Velar} & \multicolumn{2}{|c|}{Glottal} \\
+          \hline
+          Stop & p & b & t & d & tt & dd & c & j & k & g & \multicolumn{2}{c|}{q} \\
+          \hline
+          Fricative & ph & bh & th & dh & & & & & kh & gh & & \\
+          \hline
+          Sibilant & & & s & & x & & ch & & & & & \\
+          \hline
+          Nasal & & m & & n & & nn & & ny & & ng & & \\
+          \hline
+          Approximant & & v & & l & & r & & y & & w & & \\
+          \hline
+          Lateral fricative & & & & lh & & & & & & & & \\
+          \hline
+          Lateral affricate & & & & tlh & & & & & & & & \\
+          \hline
+
+        \end{tabular}
+
+			\subsubsection{Vowels}
+
+        \begin{tabular}{|l|cc|cc|cc|cc|cc|}
+
+          \hline
+          & \multicolumn{2}{c}{Front} & \multicolumn{2}{c}{Near-front} & \multicolumn{2}{c}{Central} & \multicolumn{2}{c}{Near-back} & \multicolumn{2}{c|}{Back} \\
+          \hline
+          Close & i & & & & u & & & & & \\
+          \hline
+          Near-close & & & & & & & & & & \\
+          \hline
+          Close-mid & & ö & & & & & & & & o \\
+          \hline
+          Mid & & & & & & & & & & \\
+          \hline
+          Open-mid & e & & & & & & & & & \\
+          \hline
+          Near-open & & & & & & & & & & \\
+          \hline
+          Open & & & & & \multicolumn{2}{c|}{a} & & & & \\
+          \hline
+
+        \end{tabular}
+
+        Short vowels: \orth{a e i o ö u}
+
+        Long vowels: \orth{á é í ó ô ú}
+
+        Additionally Proto-Dharáxttec has syllabic \phoneme{l̩ ɽ̩ m̩ n̪̩}.
+
+    \subsection{Allophony}
+      \subsubsection{Consonants}
+
+        % \begin{example}
+        %   \begin{original}
+        %     Test
+        %   \end{original}
+        %
+        %   \begin{translation}
+        %     Test
+        %   \end{translation}
+        % \end{example}
+        %
+
+      \subsubsection{Vowels}
+
+		\subsection{Phonotactics}
+			\subsubsection{Syllable Structure}
+
+		\subsection{Tone}
+			\lipsum[1]
+	\section{Animacy}
+		\lipsum[1]
+	\section{Verbs, Adjectives and Adverbs}
+		\lipsum[1]
+		\subsection{Verb Morphology}
+			\lipsum[1]
+			\subsubsection{Tense}
+				\lipsum[1]
+			\subsubsection{Aspect}
+				\lipsum[1]
+			\subsubsection{Mood}
+				\lipsum[1]
+			\subsubsection{Voice}
+				\lipsum[1]
+		\subsection{Transitivity}
+			\lipsum[1]
+		\subsection{Adjectives}
+			\lipsum[1]
+		\subsection{Adverbs}
+			\lipsum[1]
+	\section{Nouns}
+		\lipsum[1]
+		\subsection{Number}
+			\lipsum[1]
+		\subsection{Case}
+			\lipsum[1]
+	\section{Postpositions}
+		\lipsum[1]
+	\section{Interrogatives}
+		\lipsum[1]
+		\subsection{Polar Questions}
+			\lipsum[1]
+		\subsection{Tag Questions}
+		\subsection{Wh-qestions}
+	\section{Anaphora}
+		\subsection{Personal Pronouns}
+		\subsection{Classifiers}
+		\subsection{Correlatives}
+			\begin{adjustwidth}{-1in}{-0.75in}
+				\begin{center}
+					\scriptsize
+					\begin{tabular}{|c c| c c c c c c c c c|}
+						\hline
+						\rowcolor[gray]{0.8}\multicolumn{2}{|c}{} && \multicolumn{3}{c}{\textbf{Demonstrative}} & \multicolumn{5}{c|}{\textbf{Quantifier}} \\ \cline{4-11}
+						\rowcolor[gray]{0.8}\multicolumn{2}{|c}{} &\multirow{-2}{*}{\textbf{Interrogative}} & \textbf{Proximal} & \textbf{Medial} & \textbf{Distal} & \textbf{Existential} & \textbf{Elective} & \textbf{Universal} & \textbf{Negatory} & \textbf{Alternative} \\
+						\hline
+						\multicolumn{2}{|c|}{\cellcolor[gray]{0.8}\textbf{Determiner}} & éétla & éé & egáá & egaa & enlé & déé & enne & tséé & egke \\
+						\cellcolor[gray]{0.8} & \cellcolor[gray]{0.8} \textbf{Animate} & tlaka & aka & káá & akaa & angla & daka & enke & tsaka & agka \\
+						\cellcolor[gray]{0.8} & \cellcolor[gray]{0.8} \textbf{Inanimate} & éétla & éé & egáá & egaa & enlé & déé & enne & tséé & egke \\
+						\cellcolor[gray]{0.8} & \cellcolor[gray]{0.8} \textbf{Out of Two} & kítla & kíí & ekíí & ekii & inkli & gíí & inkí & tsikí & igkí \\
+						\multirow{-4}{*}{\cellcolor[gray]{0.8}\textbf{Pronoun}} & \cellcolor[gray]{0.8} \textbf{Out of Many} & sítla & síí & esíí & esii & inxí & síí & insí & tsíí & iski \\
+						\hline
+						\cellcolor[gray]{0.8} & \cellcolor[gray]{0.8} \textbf{Location} & lá & élá & alá & láá & anlá & ilá & telá & tselá & lágká \\ 
+						\cellcolor[gray]{0.8} & \cellcolor[gray]{0.8} \textbf{Source} & tláka & éláka & aláka & lááka & anláka & iláka & teláka & tseláka & lágkáka \\
+						\cellcolor[gray]{0.8} & \cellcolor[gray]{0.8} \textbf{Goal} & tláku & éláku & aláku & lááku & anláku & iláku & teláku & tseláku & lágkáku \\
+						\cellcolor[gray]{0.8} & \cellcolor[gray]{0.8} \textbf{Time} & tselé & allé & lé & lé & enlé & illé & tellé & tsellé & légké \\
+						\cellcolor[gray]{0.8} & \cellcolor[gray]{0.8} \textbf{Manner} & éégistla & éégis & egáágis & egaagis & enlégis & déégis & ennegis & tséégis & egkegis \\
+						\multirow{-6}{*}{\cellcolor[gray]{0.8} \textbf{Pro-adverb}} & \cellcolor[gray]{0.8} \textbf{Reason} & hyotla & hyo & ehyóó & ehyoo & ontlo & hyo & onhyo & thyo & hyogko \\
+						\hline
+					\end{tabular}
+				\end{center}
+			\end{adjustwidth}
+	\section{Conjunctions}
+		\lipsum[1]
+	\section{Syntax}
+		\lipsum[1]
+	\section{Derivational Morphology}
+		\lipsum[1]
+	\section{Numbers}
+		\lipsum[1]
+	\section{Example Texts}
+\end{document}
